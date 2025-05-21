@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IDF_Operation.IDF
 {
-    internal class Class1
+    internal class IDF
     {
     }
 }

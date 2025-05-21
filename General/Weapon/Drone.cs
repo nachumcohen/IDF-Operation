@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDF_Operation.Enemy
+namespace IDF_Operation.General
 {
-    internal class Terrorist
-
+    class Drone : Weapon
     {
+
     }
 }
