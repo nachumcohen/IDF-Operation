@@ -1,8 +1,9 @@
 ﻿using System;
 
-public class IntelligenceReport
+public class IntelligenceReport : Report
 {
 	public IntelligenceReport()
 	{
 	}
+
 }
