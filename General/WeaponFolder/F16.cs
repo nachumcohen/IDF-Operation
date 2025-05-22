@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDF_Operation.General
+namespace IDF_Operation.General.WeaponFolder
 {
-    class Drone : Weapon
+    internal class F16
     {
 
     }
