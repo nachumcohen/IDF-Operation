@@ -2,7 +2,7 @@
 
 
 
-public abstract class Weapon
+interface  Weapon
 {
 	public abstract string Name { get; set; }
 	public abstract int AmmunitionCapacity { get; set; }

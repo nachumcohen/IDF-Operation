@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IDF_Operation.General.WeaponFolder
 {
-    internal class M106
+    internal class Zik
     {
     }
 }
