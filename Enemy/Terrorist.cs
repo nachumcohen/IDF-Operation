@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace IDF_Operation.Enemy
 {
-    internal class Class1
+    public class Terrorist
     {
+        public Terrorist()
+        {
+
+        }
     }
 }
