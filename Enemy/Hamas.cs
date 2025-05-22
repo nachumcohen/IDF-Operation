@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDF_Operation.IDF
+namespace IDF_Operation.Enemy
 {
-    public class IDF
+    public class Hamas
     {
     }
 }
