@@ -15,9 +15,11 @@ namespace IDF_Operation.General
                 if (Name == null) { Name = value; }
             }
         }
-        public virtual int Rank { get; set { if (value <= 5 && value >= 1) { Rank = value; } } }
 
-        public virtual List<Weapon> Weapons { get; private set { } }
+        private int rank;
+        public virtual int Rank { get { return rank; } set { if (value <= 5 && value >= 1) { rank = value; } } }
+
+        public virtual List<Weapon> Weapons { get; private set; }
 
         public virtual Location CurrentLocation { get; private set; }
 
@@ -28,7 +30,7 @@ namespace IDF_Operation.General
 
         public virtual void AddLocation(Location _location)
         {
-            currentLocation = _location;
+            CurrentLocation = _location;
         }
 
         public Soldier(int _rank, Weapon _weapon)
