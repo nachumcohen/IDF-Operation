@@ -3,7 +3,8 @@ using System;
 
 public class IntelligenceReport : Report
 {
-    public override int ReportId { get { return ReportId; } set { if (ReportId == null) { ReportId = value; } } }
+
+    public static int ReportId { get { return ReportId; } private set { ReportId = value; } }
 
     public Terrorist TerroristPersonality { get; }
 
@@ -14,6 +15,6 @@ public class IntelligenceReport : Report
     {
         LocationPersonality = _location;
         TerroristPersonality = _terrorist;
-        ReportId = id;
+        ReportId += 1;
     }
 }

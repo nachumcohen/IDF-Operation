@@ -4,18 +4,13 @@ using System.Net.WebSockets;
 
 public class TaskReport : Report
 {
-	public override int ReportId { get { return ReportId; } set { if (ReportId == null) { ReportId = value; } } }
 
-	public Terrorist TerroristPersonality { get; }
+	public static int ReportId { get { return ReportId; } private set { ReportId = value;} }
 
-	public Location LocationPersonality { get; }
-
-	public Time TimePeronality { get; }
-	public TaskReport(int id, Terrorist _terrorist, Location _location)
+	
+	public TaskReport()
 	{
-		LocationPersonality = _location;
-		TerroristPersonality = _terrorist;
-		ReportId = id;
+		ReportId += 1;
 	}
 
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-public abstract class Report
+public interface Report
 {
-	public abstract int ReportId { get; set; }
+	public static int ReportId { get; set; }
 }
