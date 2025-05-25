@@ -10,7 +10,7 @@ public class IntelligenceReport : Report
 
     public Location LocationPersonality { get; }
 
-    public Time TimePeronality { get; }
+    public Times TimePeronality { get; }
     public IntelligenceReport(int id, Terrorist _terrorist, Location _location)
     {
         LocationPersonality = _location;

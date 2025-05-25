@@ -1,20 +1,24 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Artillery : Weapon
+namespace IDF_Operation.General.WeaponFolder
 {
-
-    public override string Name { get; set; }
-    public override int AmmunitionCapacity { get; set; } 
-    public override int Energy { get; set; }
-    public override string TypeOfBomb { get; set; }
-
-    public Artillery(string name , int ammunitionCapacity, int energy, string typeOfBomb)
+    internal class M109 : Artillery
     {
-        Name = name;
-        AmmunitionCapacity = ammunitionCapacity;
-        Energy = energy;
-        TypeOfBomb = typeOfBomb;
+        public M109(int ammunitionCapacity, int energy) : base("M109", ammunitionCapacity, energy,"Openspaces")
+        {
+            Energy = energy;
+        }
+        private string name = "M109";
+        private string typeOfBomb = "Openspaces";
+        private int ammunitionCapacity = 40;
 
+        public override string Name { get { return name; } }
+        public override int AmmunitionCapacity { get { return ammunitionCapacity; } set { if (value >= 0 && value <= 40)  ammunitionCapacity = value;  } } 
+        public override int Energy { get; set; }
+        public override string TypeOfBomb { get { return typeOfBomb; } }
     }
 }

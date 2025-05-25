@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using IDF_Operation.General;
+﻿using IDF_Operation.General;
 
 namespace IDF_Operation.Enemy
 {
-   public class Terrorist : Soldier
+    public class Terrorist : Soldier
     {
-        public string Name { get; set
-            {
-                if (Name == null) { Name = value; }
-            } }
+        public override string Name => base.Name;
 
-        public int Rank { get; set { if (value <= 5 && value >= 1) { Rank = value; } } }
+        public override int Rank => base.Rank;
 
-        public bool Status { get; set; }
-        public Weapon Weapon { get; set; }
+        public bool IsAlive { get; set; }
+        
+        public List<Weapon> Weapons { get; private set; }
+
+        public Terrorist(int _rank, Weapon _weapon) : base(_rank, _weapon)
+        {
+            IsAlive = true;
+        }
+        public Terrorist(int _rank, List<Weapon> _weapons) : base (_rank, _weapons)
+        {
+            IsAlive = true;
+        }
+
+
+
     }
 }
