@@ -8,7 +8,7 @@ namespace IDF_Operation.General.WeaponFolder
 {
     internal class M109 : Artillery
     {
-        public M109(int ammunitionCapacity, int energy) : base("M109", ammunitionCapacity, energy,"Openspaces")
+        public M109(int ammunitionCapacity, int energy) : base()
         {
             Energy = energy;
         }

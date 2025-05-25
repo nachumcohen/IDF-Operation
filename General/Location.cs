@@ -8,7 +8,7 @@ public class Location
 
 
 	public const double minLatitudeOfGaza = 31.22;
-	public const double maxLatitudeOfGaze = 31.553;
+	public const double maxLatitudeOfGaza = 31.553;
 
 	public const double minLongitudeOfGaza = 34.2;
 	public const double maxLongitudeOfGaza = 34.570;
@@ -35,7 +35,7 @@ public class Location
 				return true;
 			case "Car":
 				return true;
-			case "Open area":
+			case "OpenArea":
 				return true;
 			default:
 				return false;
@@ -46,10 +46,16 @@ public class Location
 
 	public bool ValidateLatitude(double value) 
 	{
-		return value >= minLatitudeOfGaza && value <= maxLatitudeOfGaze;
+		return value >= minLatitudeOfGaza && value <= maxLatitudeOfGaza;
     }
 	public bool ValidateLongitude(double value)
 	{
         return value >= minLongitudeOfGaza && value <= maxLongitudeOfGaza;
+    }
+
+
+    public override string ToString()
+    {
+        return $"latitude: {latitude}, longitude: {longitude}, area: {area}";
     }
 }

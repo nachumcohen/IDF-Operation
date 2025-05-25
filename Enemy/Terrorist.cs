@@ -1,4 +1,5 @@
 ﻿using IDF_Operation.General;
+using IDF_Operation.General.WeaponFolder;
 
 namespace IDF_Operation.Enemy
 {
@@ -12,11 +13,11 @@ namespace IDF_Operation.Enemy
         
         public List<Weapon> Weapons { get; private set; }
 
-        public Terrorist(int _rank, Weapon _weapon) : base(_rank, _weapon)
+        public Terrorist(int _rank, Weapon _weapon, Location _location) : base(_rank, _weapon, _location)
         {
             IsAlive = true;
         }
-        public Terrorist(int _rank, List<Weapon> _weapons) : base (_rank, _weapons)
+        public Terrorist(int _rank, List<Weapon> _weapons, Location _location) : base (_rank, _weapons, _location)
         {
             IsAlive = true;
         }

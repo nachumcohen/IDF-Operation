@@ -1,4 +1,5 @@
 ﻿using IDF_Operation.General;
+using IDF_Operation.General.WeaponFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,14 @@ namespace IDF_Operation.IDF
     public class IsraeliSoldier : Soldier
     {
 
-        public IsraeliSoldier(int _rank, Weapon _weapon) : base (_rank, _weapon)
+        public IsraeliSoldier(string name, int _rank, Weapon _weapon, Location _location) : base (_rank, _weapon, _location)
         {
+           base.Name = name;
         }
-        public IsraeliSoldier(int _rank, List<Weapon> _weapons) : base(_rank, _weapons)
+        public IsraeliSoldier(string name, int _rank, List<Weapon> _weapons, Location _location) : base(_rank, _weapons, _location)
         {
-            
+            base.Name = name;
         }
 
-        public override string Name => base.Name;
-        public override int Rank => base.Rank;
-        public override List<Weapon> Weapons => base.Weapons;
     }
 }

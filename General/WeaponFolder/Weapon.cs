@@ -10,12 +10,13 @@ namespace IDF_Operation.General.WeaponFolder
 {
    public class Weapon : AbstractWeapon
     {
-        protected  string name;
-        protected  int ammunitionCapacity;
-        protected int energy;
-        protected int uniqueId = 0;
-        protected string typeOfBomb;
-        protected Soldier uniqueSoldier;
+        protected virtual string name { get; set; }
+        protected virtual int ammunitionCapacity { get; set; }
+        protected virtual int energy { get; set; }
+        protected virtual int uniqueId { get; set; }
+        protected virtual string typeOfBomb { get; set; }
+        protected virtual Soldier uniqueSoldier { get; set; }
+
 
 
 
@@ -25,6 +26,10 @@ namespace IDF_Operation.General.WeaponFolder
         {
             StaticId ++;
             this.uniqueId = StaticId;
+
+            
+            this.AmmunitionCapacity = this.maxAmmmuniyion;
+            this.Energy = maxEnergy;
         }
 
         public override string Name { get { return name; } protected set { if (name != null) { name = value; } } }
@@ -32,31 +37,20 @@ namespace IDF_Operation.General.WeaponFolder
         public override int Energy { get { return energy; } set { if (value <= maxEnergy) { energy = value; } } }
         public override string TypeOfBomb { get { return typeOfBomb; } protected set { } }
         public override int UniqueId { get { return uniqueId; } }
-        public override Soldier UniqueSoldier { get { return uniqueSoldier; }}
+        public override Soldier UniqueSoldier { get { return uniqueSoldier; } }
 
-        public override int maxAmmmuniyion => throw new NotImplementedException();
+        public override int maxAmmmuniyion => 0;
 
-        public override int maxEnergy => throw new NotImplementedException();
+        public override int maxEnergy => 0;
 
-        public override bool CheckAvailebleEnergy()
+        public override int EnergyPerKM => 0;
+
+
+        public override string ToString()
         {
-            throw new NotImplementedException();
+            return $"Name: {this.name}\nMaxEnergy: {this.maxEnergy}\nUniqe Id: {this.UniqueId}";
         }
 
-        public override void Fire()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void MoveToTarget()
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void ComeHome()
-        {
-            throw new NotImplementedException();
-        }
 
         public override void LinkSoldierToWeapon(Soldier soldier)
         {
