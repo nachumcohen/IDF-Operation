@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace IDF_Operation.General.WeaponFolder
 {
-    internal interface IID
+    public interface IID
     {
         public int UniqueId { get; }
-        public Soldier UniqueSoldier { get; protected set; }
+        public Soldier UniqueSoldier { get; }
     }
 }
