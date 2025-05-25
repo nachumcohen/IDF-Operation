@@ -15,8 +15,27 @@ namespace IDF_Operation.Genertor.GenerateSoldier
         public static IsraeliSoldier GenerateIsraeliSoldier()
         {
             Location location = GenerateLocation.Generate();
-            Console.WriteLine(location);
-            return new IsraeliSoldier("moshe", 5, new F16(), location);
+
+            Weapon wep;
+                int wepChoice = new Random().Next(0, 3);
+
+            switch (wepChoice)
+            {
+                case 0:
+                    wep = new Zik();
+                    break;
+                case 1:
+                    wep = new M109();
+                    break;
+                case 2:
+                    wep = new F16();
+                    break;
+                default:
+                    wep = new Zik();
+                    break;
+            }
+
+            return new IsraeliSoldier("moshe", new Random().Next(1,5), wep, location);
         }
 
     }

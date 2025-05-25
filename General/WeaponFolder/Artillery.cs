@@ -5,4 +5,5 @@ using System;
 public class Artillery : Weapon
 {
     protected override string name { get; set; } = "Artillery: ";
+
 }

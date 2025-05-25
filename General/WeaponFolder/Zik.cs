@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace IDF_Operation.General.WeaponFolder
 {
-    internal class Zik : Drone
+     public class Zik : Drone
     {
+
+        public Zik() : base()
+        {
+        }
+        protected override string name => base.name + "Zik";
+        public override int maxAmmmuniyion => 8;
+        public override int maxEnergy => 100;
+
         //    private string name = "zik";
         //    private int ammunitionCapacity = 3;
         //    private string typeOfBomb = new Random().Next(0, 2) == 0 ? "Pepole" : "Car";

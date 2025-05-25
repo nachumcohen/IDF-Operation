@@ -111,10 +111,19 @@ namespace IDF_Operation.General
             Weapons.AddRange(_weapons);
         }
 
+        private string WeaponsList(List<Weapon> _weapons)
+        {
+            string convertedWeaponsList = "";
+            foreach (Weapon weapon in _weapons)
+            {
+                convertedWeaponsList += weapon.ToString();
+            }
+            return convertedWeaponsList;
+        }
 
         public override string ToString()
         {
-            return $"name {Name}, Rank{Rank}, Location {CurrentLocation}";
+            return $"Name is: {Name}, Rank is: {Rank}, Location {CurrentLocation}, Weapon: {WeaponsList(Weapons)}";
         }
 
     }
