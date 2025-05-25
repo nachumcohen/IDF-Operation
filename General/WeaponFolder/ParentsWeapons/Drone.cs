@@ -1,4 +1,4 @@
-﻿using IDF_Operation.General.WeaponFolder;
+﻿using IDF_Operation.General.WeaponFolder.NonRealWeapons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 
 
-namespace IDF_Operation.General
+namespace IDF_Operation.General.WeaponFolder.ParentsWeapons
 {
-    public class Drone : Weapon
+    public class Drone : ElectricalWeapon
     {
         protected override string name { get; set; } = "Drone: ";
     }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDF_Operation.General.WeaponFolder
+namespace IDF_Operation.General.WeaponFolder.IsraeliWeapons
 {
     public class F16 : FighterJet
     {
