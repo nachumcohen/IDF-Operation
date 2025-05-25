@@ -11,7 +11,7 @@ namespace IDF_Operation.General.WeaponFolder
         private string name = "zik";
         private int ammunitionCapacity = 3;
         private string typeOfBomb = new Random().Next(0, 2) == 0 ? "Pepole" : "Car";
- ;
+ 
 
         public Zik(int ammunitionCapacity, int energy, string typeOfBomb) : base("zik", ammunitionCapacity, energy, typeOfBomb)
         {

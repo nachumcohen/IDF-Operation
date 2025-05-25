@@ -8,5 +8,6 @@ namespace IDF_Operation.Genertor.GenerateReport
 {
     public class GenerateIntelligenceReport
     {
+
     }
 }

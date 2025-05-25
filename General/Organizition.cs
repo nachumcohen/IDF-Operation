@@ -11,5 +11,7 @@ namespace IDF_Operation.General
         string DateOfEstablishment { get; set; }
         Soldier ChairmanOfTheOrganization { get; set; }
 
+        List<Soldier> Soldiers { get; set; }
+
     }
 }
