@@ -5,8 +5,8 @@ using System.Net.WebSockets;
 
 public class TaskReport : Report
 {
-
-	public static int ReportId { get { return ReportId; } private set { ReportId = value;} }
+	public static int ReportCounts { get; }
+	public  int Id { get { return Id; } private set { Id = value;} }
 
 	public IntelligenceReport IntelligenceReportSpecific { get { return IntelligenceReportSpecific; } private set { IntelligenceReportSpecific = value; } }
 	
@@ -15,7 +15,7 @@ public class TaskReport : Report
 	public bool Success;
 	public TaskReport(IntelligenceReport _intelligenceReport, Weapon _weaponSpecicfic)
 	{
-		ReportId += 1;
+		Id += 1;
 		IntelligenceReportSpecific = _intelligenceReport;
 		WeaponSpecific = _weaponSpecicfic;
 	}

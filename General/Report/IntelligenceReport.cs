@@ -4,17 +4,20 @@ using System;
 public class IntelligenceReport : Report
 {
 
-    public static int ReportId { get { return ReportId; } private set { ReportId = value; } }
+    public static int ReportCounts { get; private set; }
 
+    public int Id { get;  }
     public Terrorist TerroristPersonality { get; }
 
     public Location LocationPersonality { get; }
 
     public Times TimePeronality { get; }
-    public IntelligenceReport(int id, Terrorist _terrorist, Location _location)
+    public IntelligenceReport(Terrorist _terrorist, Location _location)
     {
         LocationPersonality = _location;
         TerroristPersonality = _terrorist;
-        ReportId += 1;
+
+        ReportCounts += 1;
+        Id = ReportCounts;
     }
 }

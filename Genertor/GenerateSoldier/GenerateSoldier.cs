@@ -1,4 +1,5 @@
 ﻿using IDF_Operation.Enemy;
+using IDF_Operation.General;
 using IDF_Operation.General.WeaponFolder.IsraeliWeapons;
 using IDF_Operation.General.WeaponFolder.NonRealWeapons;
 using IDF_Operation.General.WeaponFolder.TerroristWeapon;
@@ -74,6 +75,24 @@ namespace IDF_Operation.Genertor.GenerateSoldier
             return pl;
         }
 
+        public static List<Soldier> GenerateListOfIsraeliSoldier(int num)
+        {
+            List<Soldier> israeliList = new List<Soldier>();
+            for(int i =0; i<num; i++)
+            {
+                israeliList.Add(GenerateIsraeliSoldier());
+            }
+            return israeliList;
+        }
+        public static List<Soldier> GenerateListOfTerrorist(int num)
+        {
+            List<Soldier> terroristList = new List<Soldier>();
+            for (int i = 0; i < num; i++)
+            {
+                terroristList.Add(GenerateTerrorist());
+            }
+            return terroristList;
+        }
 
     }
 }
