@@ -1,4 +1,7 @@
 ﻿using IDF_Operation.General;
+using IDF_Operation.General.WeaponFolder.TerroristWeapon;
+using IDF_Operation.Genertor;
+using IDF_Operation.Genertor.GenerateSoldier;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +12,13 @@ namespace IDF_Operation.Enemy
 {
     public class Hamas : Organizition
     {
-        public string DateOfEstablishment { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Soldier ChairmanOfTheOrganization { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public List<Soldier> Soldiers { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Hamas()
+        {
+            Soldiers =  GenerateSoldier.GenerateListOfTerrorist(20);
+        }
+
+        public string DateOfEstablishment { get { return "1987"; } }
+        public Soldier ChairmanOfTheOrganization { get; } = new Terrorist("ChairMan", 10, new Gun(), GenerateLocation.Generate());
+        public List<Soldier> Soldiers { get; }
     }
 }

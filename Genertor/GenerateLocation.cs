@@ -34,5 +34,10 @@ namespace IDF_Operation.Genertor
             string area = areas[areaRandom.Next(0, 3)];
             return new Location(Lati, Longi, area);
         }
+
+        public static Location CopyLocation(Location _location)
+        {
+            return new Location(_location.Latitude,_location.Longitude, _location.Area);
+        }
     }
 }

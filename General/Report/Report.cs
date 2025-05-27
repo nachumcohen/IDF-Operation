@@ -2,5 +2,6 @@
 
 public interface Report
 {
-	public static int ReportId { get; set; }
+	public  int Id { get; }
+	public static int ReportCounts { get;  }
 }

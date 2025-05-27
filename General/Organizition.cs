@@ -8,10 +8,11 @@ namespace IDF_Operation.General
 {
      interface Organizition
     {
-        string DateOfEstablishment { get; set; }
-        Soldier ChairmanOfTheOrganization { get; set; }
+        string DateOfEstablishment { get;  }
+        Soldier ChairmanOfTheOrganization { get; }
 
-        List<Soldier> Soldiers { get; set; }
+        List<Soldier> Soldiers { get;  }
+
 
     }
 }
