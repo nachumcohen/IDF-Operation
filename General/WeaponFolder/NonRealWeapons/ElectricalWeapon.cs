@@ -12,7 +12,7 @@ namespace IDF_Operation.General.WeaponFolder.NonRealWeapons
    public class ElectricalWeapon : Weapon, IEnergyWeapon
     {
         protected virtual int ammunitionCapacity { get; set; }
-        protected virtual int energy { get; set; }
+        protected virtual double energy { get; set; }
         protected virtual string typeOfBomb { get; set; }
 
 
@@ -25,18 +25,17 @@ namespace IDF_Operation.General.WeaponFolder.NonRealWeapons
         }
 
         public virtual int AmmunitionCapacity { get { return ammunitionCapacity; } set { if (value <= maxAmmmuniyion) { ammunitionCapacity = value; } } }
-        public virtual int Energy { get { return energy; } set { if (value <= maxEnergy) { energy = value; } } }
+        public virtual double Energy { get { return energy; } set { if (value <= maxEnergy) { energy = value; } } }
 
-        public virtual string TypeOfBomb { get { return typeOfBomb; } protected set { } }
+        public virtual string TypeOfBomb { get { return typeOfBomb; } protected set { typeOfBomb = value; } }
 
         public virtual int maxAmmmuniyion => 0;
-        public virtual int maxEnergy => 0;
-
-        public virtual int EnergyPerKM => 0;
+        public virtual double maxEnergy => 0;
+        public virtual double EnergyPerKM => 0;
 
         public override string ToString()
         {
-            return base.ToString() + $"\nMaxEnergy: {maxEnergy}\n";
+            return base.ToString() + $"\nEnergy: {Energy}\n";
         }
 
 

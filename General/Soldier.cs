@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace IDF_Operation.General
 {
-    public class Soldier : IStrike
+    public class Soldier
     {
 
         private int rank;
@@ -33,7 +33,6 @@ namespace IDF_Operation.General
 
 
         
-        int IStrike.EnergyPerKM => throw new NotImplementedException();
 
         public virtual void AddWeapon(Weapon _weapon)
         {
@@ -45,57 +44,7 @@ namespace IDF_Operation.General
             CurrentLocation = _location;
         }
 
-        public bool TryingSendStrike(int _distance, int requiersBomb)
-        {
-            throw new NotImplementedException();
-        }
 
-        public bool CheckAvailebleStrike()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void MoveToTarget()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Fire()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ComeHome()
-        {
-            throw new NotImplementedException();
-        }
-
-        bool IStrike.TryingSendStrike(int _distance, int requiersBomb)
-        {
-            throw new NotImplementedException();
-        }
-
-        bool IStrike.CheckAvailebleStrike()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IStrike.MoveToTarget()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IStrike.Fire()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IStrike.ComeHome()
-        {
-            throw new NotImplementedException();
-        }
-
-        protected int EnergyPerKM;
         public Soldier(int _rank, Weapon _weapon, Location _location)
         {
             CurrentLocation = _location;

@@ -8,8 +8,8 @@ namespace IDF_Operation.General.WeaponFolder.NonRealWeapons.AbstractsInterfaces
 {
     public interface IEnergyWeapon : IFireArm
     {
-        public  int maxEnergy { get; }
-        public  int Energy { get; set; }
-        public  int EnergyPerKM { get; }
+        public  double maxEnergy { get; }
+        public  double Energy { get; set; }
+        public double EnergyPerKM { get;}
     }
 }

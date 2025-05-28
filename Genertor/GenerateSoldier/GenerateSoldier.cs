@@ -75,18 +75,18 @@ namespace IDF_Operation.Genertor.GenerateSoldier
             return pl;
         }
 
-        public static List<Soldier> GenerateListOfIsraeliSoldier(int num)
+        public static List<IsraeliSoldier> GenerateListOfIsraeliSoldier(int num)
         {
-            List<Soldier> israeliList = new List<Soldier>();
+            List<IsraeliSoldier> israeliList = new List<IsraeliSoldier>();
             for(int i =0; i<num; i++)
             {
                 israeliList.Add(GenerateIsraeliSoldier());
             }
             return israeliList;
         }
-        public static List<Soldier> GenerateListOfTerrorist(int num)
+        public static List<Terrorist> GenerateListOfTerrorist(int num)
         {
-            List<Soldier> terroristList = new List<Soldier>();
+            List<Terrorist> terroristList = new List<Terrorist>();
             for (int i = 0; i < num; i++)
             {
                 terroristList.Add(GenerateTerrorist());

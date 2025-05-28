@@ -8,13 +8,22 @@ using IDF_Operation.IDF;
 
 
 
-
+IDF idf = new IDF();
 for (int i = 0; i<= 5; i++)
 {
     IsraeliSoldier g = GenerateSoldier.GenerateIsraeliSoldier();
-    Console.WriteLine(g);
 
     Terrorist t = GenerateSoldier.GenerateTerrorist();
-    Console.WriteLine(t);
+
+
+    try
+    {
+        idf.ShowAvailbleStrike();
+        idf.Fire();
+    }
+    catch
+    {
+
+    }
 
 }

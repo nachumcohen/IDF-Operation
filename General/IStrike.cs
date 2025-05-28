@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace IDF_Operation.General
 {
-    internal interface IStrike
+    public interface IStrike
     {
-        protected int EnergyPerKM { get; }
-
-        bool TryingSendStrike(int _distance, int requiersBomb);
-        bool CheckAvailebleStrike();
-        void MoveToTarget();
-        void Fire();
-        void ComeHome();
-
+        public bool IsAbillityToStrike(double distance, string attackArea);
+        public void Strike(double distance);
     }
 }

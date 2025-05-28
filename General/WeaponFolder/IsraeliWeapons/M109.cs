@@ -10,9 +10,13 @@ namespace IDF_Operation.General.WeaponFolder.IsraeliWeapons
     {
         public M109() : base()
         {
+            Energy = 100;
         }
         protected override string name => base.name + "M109";
         public override int maxAmmmuniyion => 8;
-        public override int maxEnergy => 100;
+        public override double maxEnergy => 100;
+        protected override string typeOfBomb => "OpenArea";
+        public override double EnergyPerKM => 2;
+
     }
 }
