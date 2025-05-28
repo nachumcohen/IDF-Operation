@@ -15,7 +15,15 @@ for (int i = 0; i<= 5; i++)
 
     Terrorist t = GenerateSoldier.GenerateTerrorist();
 
-    idf.ShowAvailbleStrike();
-    idf.Fire();
+
+    try
+    {
+        idf.ShowAvailbleStrike();
+        idf.Fire();
+    }
+    catch
+    {
+
+    }
 
 }

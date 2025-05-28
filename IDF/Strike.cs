@@ -1,10 +1,4 @@
-﻿using IDF_Operation.General;
-using IDF_Operation.Genertor.GenerateReport;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace IDF_Operation.IDF
 {
@@ -15,8 +9,12 @@ namespace IDF_Operation.IDF
         {
             var distances = SoldiersDistances(_intelligenceReport, _soldiers);
             var Availble = GetAvailbleCloseSoldierToAttack(_intelligenceReport, distances);
-
-            return GenerateTaskReport.Generate(_intelligenceReport, Availble.Weapons[0], distances[Availble]);
+            Console.WriteLine(_intelligenceReport);
+            if(Availble is null)
+            {
+                throw new Exception("There is no one that can do it");
+            }
+            return new TaskReport(_intelligenceReport, Availble.Weapons[0], distances[Availble]);
         }
         private static Dictionary<IsraeliSoldier, double> SoldiersDistances(IntelligenceReport _intelligenceReport, List<IsraeliSoldier> _soldiers)
         {
@@ -41,12 +39,14 @@ namespace IDF_Operation.IDF
             foreach (IsraeliSoldier israeli in _soldiers.Keys)
             {
                 double specificlyDistance = _soldiers[israeli];
+                //needs to fix the abillity of the soldiers
                 bool abillity = israeli.IsAbillityToStrike(specificlyDistance, _intelligenceReport.LocationPersonality.Area);
-                if (abillity && distance > specificlyDistance)
+                if (abillity&& distance > specificlyDistance)
                 {
                     distance = specificlyDistance;
                     tmpIsraeli = israeli;
                 }
+                //if (tmpIsraeli is null) { Console.WriteLine("Here is THE Problem\n" + abillity); }
             }
             return tmpIsraeli;
 

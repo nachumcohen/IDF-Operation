@@ -17,6 +17,7 @@ namespace IDF_Operation.IDF
         {
             aman = new Aman();
             aman.GetIntelligenceReports();
+            taskReport = new List<TaskReport>();
         }
 
         public string DateOfEstablishment => "26.5.1948";
@@ -37,8 +38,16 @@ namespace IDF_Operation.IDF
         public TaskReport ShowAvailbleStrike()
         {
             UpdateIntelligenceReport();
-            taskReport.Add(Strike.AnalyzeAttack(intelligenceReport[0], Soldiers));
-            return taskReport[0];
+            //Console.WriteLine(taskReport.Count);
+            try
+            {
+                taskReport.Add(Strike.AnalyzeAttack(intelligenceReport[0], Soldiers));
+                return taskReport[0];
+            }
+            catch
+            {
+                throw new Exception("No One Can Do it.");
+            }
         }
         public void Fire()
         {
