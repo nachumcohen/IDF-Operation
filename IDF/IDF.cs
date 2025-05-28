@@ -12,24 +12,46 @@ namespace IDF_Operation.IDF
 {
     public class IDF : Organizition
     {
+
+        public IDF()
+        {
+            aman = new Aman();
+            aman.GetIntelligenceReports();
+        }
+
         public string DateOfEstablishment => "26.5.1948";
-
         public Soldier ChairmanOfTheOrganization => new IsraeliSoldier("ChairMan", 10, new F16(), GenerateLocation.Generate());
-
-        public List<Soldier> Soldiers => GenerateSoldier.GenerateListOfIsraeliSoldier(20);
+        public List<IsraeliSoldier> Soldiers => GenerateSoldier.GenerateListOfIsraeliSoldier(20);
 
         private Aman aman;
-        public List<IntelligenceReport> intelligenceReport;
+
+
+        public List<IntelligenceReport> intelligenceReport { get; private set; }
+        public List<TaskReport> taskReport { get; private set; }
+
 
         public void UpdateIntelligenceReport()
         {
             intelligenceReport = aman.GetIntelligenceReports();
         }
-
-        public IDF()
+        public TaskReport ShowAvailbleStrike()
         {
-            aman = new Aman();
+            UpdateIntelligenceReport();
+            taskReport.Add(Strike.AnalyzeAttack(intelligenceReport[0], Soldiers));
+            return taskReport[0];
         }
+        public void Fire()
+        {
+            taskReport[0].Success = true;
+            Console.WriteLine("Success!!!");
+            intelligenceReport.RemoveAt(0);
+        }
+
+
+
+
+
+
 
     }
 }

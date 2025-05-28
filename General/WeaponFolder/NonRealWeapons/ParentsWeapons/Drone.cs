@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 
 
-namespace IDF_Operation.General.WeaponFolder.ParentsWeapons
+namespace IDF_Operation.General.WeaponFolder.NonRealWeapons.ParentsWeapons
 {
     public class Drone : ElectricalWeapon
     {

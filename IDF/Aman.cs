@@ -10,6 +10,11 @@ namespace IDF_Operation.IDF
 {
     public class Aman
     {
+
+        //if Hamas add terrorists, we need to crea an update function, for create more reports. 
+        //also, if the terrorist not died, we need to create another report.
+
+
         private List<IntelligenceReport> IntelligenceReport;
 
         private Hamas Bad;
@@ -28,5 +33,9 @@ namespace IDF_Operation.IDF
             }
             return IntelligenceReport;
         }
+
+        
+
+
     }
 }

@@ -19,6 +19,6 @@ namespace IDF_Operation.Enemy
 
         public string DateOfEstablishment { get { return "1987"; } }
         public Soldier ChairmanOfTheOrganization { get; } = new Terrorist("ChairMan", 10, new Gun(), GenerateLocation.Generate());
-        public List<Soldier> Soldiers { get; }
+        public List<Terrorist> Soldiers { get; }
     }
 }

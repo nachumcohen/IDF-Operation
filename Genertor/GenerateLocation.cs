@@ -28,7 +28,7 @@ namespace IDF_Operation.Genertor
             double Lati = (double)RandomLocation.Next(minLati, maxLati) / 1000;
 
 
-            string[] areas = { "Home", "Car", "OpenArea" };
+            string[] areas = { "Building", "Car", "OpenArea", "People" };
 
             Random areaRandom = new Random();
             string area = areas[areaRandom.Next(0, 3)];

@@ -31,13 +31,15 @@ public class Location
 	public bool ValidateArea(string area)
 	{
 		switch (area){
-			case "Home":
+			case "Building":
 				return true;
 			case "Car":
 				return true;
 			case "OpenArea":
 				return true;
-			default:
+			case "People":
+				return true;
+            default:
 				return false;
 				}
 			
@@ -53,6 +55,29 @@ public class Location
         return value >= minLongitudeOfGaza && value <= maxLongitudeOfGaza;
     }
 
+	public static double DistanceBetweenTwoPoints(Location loca1, Location loca2)
+	{
+
+		double lat1 = loca1.Latitude;
+		double lon1 = loca1.Longitude;
+		double lat2 = loca2.Latitude;
+		double lon2 = loca2.Longitude;
+
+
+
+        double R = 6371;
+		double ToRaidans = Math.PI / 180;
+		double dLat = (lat2 - lat1) * ToRaidans;
+		double dLon = (lon2 - lon1) * ToRaidans;
+
+
+		double a = Math.Sin(dLat / 2) * Math.Sin(dLat / 2) +
+			  Math.Cos(lat1) * Math.Cos(lat2) *
+			  Math.Sin(dLon / 2) * Math.Sin(dLon / 2);
+
+		double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+		return R * c;
+	}
 
     public override string ToString()
     {

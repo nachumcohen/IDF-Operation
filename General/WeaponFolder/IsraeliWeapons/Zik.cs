@@ -1,4 +1,4 @@
-﻿using IDF_Operation.General.WeaponFolder.ParentsWeapons;
+﻿using IDF_Operation.General.WeaponFolder.NonRealWeapons.ParentsWeapons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,22 +15,11 @@ namespace IDF_Operation.General.WeaponFolder.IsraeliWeapons
         }
         protected override string name => base.name + "Zik";
         public override int maxAmmmuniyion => 8;
-        public override int maxEnergy => 100;
+        public override double maxEnergy => 100;
+        public override double EnergyPerKM => 2;
 
-        //    private string name = "zik";
-        //    private int ammunitionCapacity = 3;
-        //    private string typeOfBomb = new Random().Next(0, 2) == 0 ? "Pepole" : "Car";
+        protected override string typeOfBomb => "Car People";
+        
 
-
-        //    public Zik(int ammunitionCapacity, int energy, string typeOfBomb) : base("zik", ammunitionCapacity, energy, typeOfBomb)
-        //    {
-        //        Energy = energy;
-        //    }
-
-        //    public override string Name { get { return name; } }
-
-        //    public override int AmmunitionCapacity { get { return ammunitionCapacity; } set { if (value >= 0 && value <= 3) ammunitionCapacity = value;  } }
-        //    public override int Energy { get; set; }
-        //    public override string TypeOfBomb { get { return typeOfBomb; } set {if (value == "Pepole"|| value == "Car" ) typeOfBomb = value;  }}
     }
 }
