@@ -11,7 +11,7 @@ public class IntelligenceReport : Report
 
     public Location LocationPersonality { get; }
 
-    public Times TimePeronality { get; }
+    public Times TimePersonality { get; }
     public IntelligenceReport(Terrorist _terrorist, Location _location)
     {
         LocationPersonality = _location;
@@ -19,5 +19,11 @@ public class IntelligenceReport : Report
 
         ReportCounts += 1;
         Id = ReportCounts;
+
+        TimePersonality = new Times();
+    }
+    public override string ToString()
+    {
+        return $"Id: {Id}. Terrorist: {TerroristPersonality}. Time: {TimePersonality}";
     }
 }

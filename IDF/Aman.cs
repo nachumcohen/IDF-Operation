@@ -23,18 +23,27 @@ namespace IDF_Operation.IDF
         {
             IntelligenceReport = new List<IntelligenceReport>();
             Bad = new Hamas();
+            UpdateIntelligenceReports();
         }
+
         public List<IntelligenceReport> GetIntelligenceReports()
         {
-            foreach(Terrorist trst in Bad.Soldiers)
+            return IntelligenceReport;
+        }
+        
+        public List<IntelligenceReport> UpdateIntelligenceReports()
+        {
+            if (IntelligenceReport.Count > 0) IntelligenceReport.Clear();
+            foreach (Terrorist trst in Bad.Soldiers)
             {
                 IntelligenceReport report = new IntelligenceReport(trst, trst.CurrentLocation);
                 IntelligenceReport.Add(report);
             }
+            Console.WriteLine(IntelligenceReport[0] + "\n\n\n");
+
             return IntelligenceReport;
         }
 
-        
 
 
     }
