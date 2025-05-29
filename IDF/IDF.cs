@@ -78,7 +78,6 @@ namespace IDF_Operation.IDF
         {
             taskReport.Sort((t1, t2) => t2.IntelligenceReportSpecific.TerroristPersonality.Dangerous.CompareTo(t1.IntelligenceReportSpecific.TerroristPersonality.Dangerous));
             //taskReport = taskReport.OrderByDescending(t => t.IntelligenceReportSpecific.TerroristPersonality.Dangerous).ToList();
-            
         }
 
         public void PrintAliveTerrorist()
@@ -93,6 +92,19 @@ namespace IDF_Operation.IDF
             }
         }
 
+        public TaskReport GetTaskByNum(int num)
+        {
+            return taskReport[num];
+        }
+        public void PrintAllTasks()
+        {
+            Console.WriteLine("Chhose a task by num.");
+            for (int i = 0; i < taskReport.Count; i++)
+            {
+                Console.WriteLine($"Task num {i+1}.\n" +
+                    $""+taskReport[i]);
+            }
+        }
 
 
     }

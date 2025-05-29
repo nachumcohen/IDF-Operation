@@ -11,7 +11,7 @@ namespace IDF_Operation.IDF
     {
         public static string BringMenu(TaskReport task)
         {
-            string strike = "4. Strike.\n";
+            string strike = "5. Strike.\n";
             string menu = "\n\n" +
                 "0. Exit\n" +
                 "1. Show list of lives TERRORIST.\n" +
@@ -44,6 +44,9 @@ namespace IDF_Operation.IDF
 
                     break;
                 case 4:
+                    idf.PrintAllTasks();
+                    break;
+                case 5:
                     try { if (!(taskReport is null)) idf.Fire(taskReport);
                         else
                         {
