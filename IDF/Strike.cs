@@ -1,5 +1,7 @@
 ﻿
 
+using IDF_Operation.Exceptions;
+
 namespace IDF_Operation.IDF
 {
     public static class Strike
@@ -9,10 +11,9 @@ namespace IDF_Operation.IDF
         {
             var distances = SoldiersDistances(_intelligenceReport, _soldiers);
             var Availble = GetAvailbleCloseSoldierToAttack(_intelligenceReport, distances);
-            Console.WriteLine(_intelligenceReport);
             if(Availble is null)
             {
-                throw new Exception("There is no one that can do it");
+                throw new NotHaveAvalbleSoldiers();
             }
             return new TaskReport(_intelligenceReport, Availble.Weapons[0], distances[Availble]);
         }

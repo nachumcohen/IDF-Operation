@@ -1,7 +1,6 @@
 ﻿using IDF_Operation.General;
 using IDF_Operation.General.WeaponFolder.TerroristWeapon;
 using IDF_Operation.Genertor;
-using IDF_Operation.Genertor.GenerateSoldier;
 using System;
 using System.Collections.Generic;
 using System.Linq;

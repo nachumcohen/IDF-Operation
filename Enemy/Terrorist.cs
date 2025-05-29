@@ -24,7 +24,7 @@ namespace IDF_Operation.Enemy
         }
         public override string ToString()
         {
-            return base.ToString() + $"Dangerous Rank is: {Dangerous}";
+            return $"\n-------Dangerous Rank is: {Dangerous}-------" + base.ToString();
         }
 
 

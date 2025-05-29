@@ -72,7 +72,11 @@ namespace IDF_Operation.General
 
         public override string ToString()
         {
-            return $"Name is: {Name}, Rank is: {Rank}, Location {CurrentLocation}, Weapon: {WeaponsList(Weapons)}";
+            return $"" +
+                $"\nName is: {Name}\n" +
+                $"Rank is: {Rank}\n" +
+                $"Location {CurrentLocation}\n" +
+                $"Weapon: {WeaponsList(Weapons)}";
         }
 
     }

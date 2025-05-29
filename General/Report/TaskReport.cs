@@ -28,10 +28,11 @@ public class TaskReport : Report
 	}
     public override string ToString()
     {
-        return $"Report Id is: {Id}\n" +
+        return $"" +
+			$"Task Report Id is: {Id}\n" +
 			$"Intelligence Report is: {IntelligenceReportSpecific}\n" +
-			$"The man that will attack will be: {WeaponSpecific.UniqueSoldier.Name}, with the weapon {WeaponSpecific.Name}" +
-			$"He is in {Distance}KM from the Target.\n";
+			$"*****\nThe Strike can made by: {WeaponSpecific.UniqueSoldier.Name}, with the weapon {WeaponSpecific.Name}\n" +
+			$"He is in {Distance}KM from the Target.\n*****\n";
     }
 
 }

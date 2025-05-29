@@ -24,6 +24,7 @@ public class IntelligenceReport : Report
     }
     public override string ToString()
     {
-        return $"Id: {Id}. Terrorist: {TerroristPersonality}. Time: {TimePersonality}";
+        return $"Intelligance Id: {Id}\n" +
+            $"\n{TerroristPersonality}.\nTime: {TimePersonality}";
     }
 }

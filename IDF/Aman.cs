@@ -39,11 +39,19 @@ namespace IDF_Operation.IDF
                 IntelligenceReport report = new IntelligenceReport(trst, trst.CurrentLocation);
                 IntelligenceReport.Add(report);
             }
-            Console.WriteLine(IntelligenceReport[0] + "\n\n\n");
-
             return IntelligenceReport;
         }
 
+        public void PrintAliveTerrorist()
+        {
+            foreach (Terrorist t in Bad.Soldiers)
+            {
+                if (t.IsAlive)
+                {
+                    Console.WriteLine(t);
+                }
+            }
+        }
 
 
     }

@@ -10,7 +10,7 @@ namespace IDF_Operation.General.WeaponFolder.TerroristWeapon
 
     public class TerroristWeapons : Weapon
     {
-        protected override string name => "Terrorist Weapon: ";
+        protected override string name => "";
         public virtual int WepRank{ get; protected set; }
     }
     public class AK47 : TerroristWeapons

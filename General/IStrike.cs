@@ -9,6 +9,6 @@ namespace IDF_Operation.General
     public interface IStrike
     {
         public bool IsAbillityToStrike(double distance, string attackArea);
-        public void Strike(double distance);
+        public void Strike(double distance, string area);
     }
 }

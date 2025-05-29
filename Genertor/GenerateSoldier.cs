@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDF_Operation.Genertor.GenerateSoldier
+namespace IDF_Operation.Genertor
 {
     public static class GenerateSoldier
     {

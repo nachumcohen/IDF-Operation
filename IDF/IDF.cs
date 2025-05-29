@@ -1,7 +1,8 @@
-﻿using IDF_Operation.General;
+﻿using IDF_Operation.Enemy;
+using IDF_Operation.Exceptions;
+using IDF_Operation.General;
 using IDF_Operation.General.WeaponFolder.IsraeliWeapons;
 using IDF_Operation.Genertor;
-using IDF_Operation.Genertor.GenerateSoldier;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,11 @@ namespace IDF_Operation.IDF
         public IDF()
         {
             aman = new Aman();
-            aman.GetIntelligenceReports();
+            intelligenceReport = aman.GetIntelligenceReports();
             taskReport = new List<TaskReport>();
+            CreateTaskReports();
+            SortByDangerous();
+
         }
 
         public string DateOfEstablishment => "26.5.1948";
@@ -36,29 +40,58 @@ namespace IDF_Operation.IDF
             intelligenceReport = aman.GetIntelligenceReports();
         }
         public TaskReport ShowAvailbleStrike()
-        {
-            UpdateIntelligenceReport();
-            //Console.WriteLine(taskReport.Count);
-            try
-            {
-                taskReport.Add(Strike.AnalyzeAttack(intelligenceReport[0], Soldiers));
-                return taskReport[0];
-            }
-            catch
-            {
-                throw new Exception("No One Can Do it.");
-            }
+        {            
+                foreach (var task in taskReport)
+                {
+                    if (!task.Success)
+                    {
+                        return task;
+                    }
+                }
+                throw new NoTasks();
         }
-        public void Fire()
+        public void Fire(TaskReport task)
         {
-            taskReport[0].Success = true;
+            task.Success = true;
             Console.WriteLine("Success!!!");
-            intelligenceReport.RemoveAt(0);
+            task.IntelligenceReportSpecific.TerroristPersonality.IsAlive = false;
+            task.Success= true;   
         }
 
+        public void CreateTaskReports() 
+        {
+            foreach (IntelligenceReport intel in intelligenceReport)
+            {
+                try
+                {
+                    taskReport.Add(Strike.AnalyzeAttack(intel, Soldiers));
+                }
+                catch (NotHaveAvalbleSoldiers)
+                {
+                    //throw new NotHaveAvalbleSoldiers();
+                    continue;   
+                }
+            }
+            SortByDangerous();
+        }
+        public void SortByDangerous()
+        {
+            taskReport.Sort((t1, t2) => t2.IntelligenceReportSpecific.TerroristPersonality.Dangerous.CompareTo(t1.IntelligenceReportSpecific.TerroristPersonality.Dangerous));
+            //taskReport = taskReport.OrderByDescending(t => t.IntelligenceReportSpecific.TerroristPersonality.Dangerous).ToList();
+            
+        }
 
-
-
+        public void PrintAliveTerrorist()
+        {
+            aman.PrintAliveTerrorist();
+        }
+        public void PrintSoldiers()
+        {
+            foreach(var s in Soldiers)
+            {
+                Console.WriteLine(s);
+            }
+        }
 
 
 

@@ -20,9 +20,10 @@ namespace IDF_Operation.General.WeaponFolder.NonRealWeapons
         public override string Name { get { return name; } protected set { if (name != null) { name = value; } } }
         public override int UniqueId { get { return uniqueId; } }
         public override Soldier UniqueSoldier { get { return uniqueSoldier; } }
+        
         public override string ToString()
         {
-            return $"Name: {name}\nMaxEnergy: Uniqe Id: {UniqueId}";
+            return $"Weapon Name: {name}, Uniqe Weapon Id: {UniqueId}";
         }
 
 

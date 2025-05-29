@@ -1,4 +1,5 @@
-﻿using IDF_Operation.General;
+﻿using IDF_Operation.Exceptions;
+using IDF_Operation.General;
 using IDF_Operation.General.WeaponFolder.IsraeliWeapons;
 using IDF_Operation.General.WeaponFolder.NonRealWeapons;
 using System;
@@ -43,8 +44,10 @@ namespace IDF_Operation.IDF
             return energy && bullets && area;
         }
 
-        public void Strike(double distance)
+        public void Strike(double distance, string area)
         {
+
+            if (!IsAbillityToStrike(distance, area)) { throw new ICantAttack(); }
             ElectricalWeapon wep = (ElectricalWeapon) Weapons[0];
 
             MoveToTarget(wep, distance);
